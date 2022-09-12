@@ -11,7 +11,7 @@ const getAllJokes = async () => {
     return jokes;
 }
 const getRandomJoke = async () => {
-    // const joke = await Joke.aggregate([{$sample: {size:1}}]);
+    const joke = await Joke.aggregate([{$sample: {size:1}}]);
     return joke;
 }
 

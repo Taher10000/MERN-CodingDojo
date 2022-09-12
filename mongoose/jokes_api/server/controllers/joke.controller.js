@@ -1,3 +1,4 @@
+const jokeService = require('../services/joke.service');
 const {createJoke, 
     getAllJokes,
     getJokeById,
@@ -30,8 +31,8 @@ const handleGetAllJokes = async (req,res) =>{
 };
 const handleGetRandomJoke = async (req,res) =>{
     try{
-        const joke = await getRandomJoke();
-        return res.json(joke);
+        const jokes = await getRandomJoke();
+        return res.json(jokes[0]);
     }
     catch(error){
         return res.status(400).json(error);
