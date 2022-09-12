@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const dbName = 'joke-api';
 
-mongoose.connect('mongodb://localhost/name_of_your_DB', {
+mongoose.connect(`mongodb://localhost/${dbName}`, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
