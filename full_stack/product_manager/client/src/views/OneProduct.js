@@ -27,12 +27,12 @@ export const OneProduct = (props) => {
         .catch((error) =>{console.log(error)});
     }
 
-    const {_id, title, price, description} = product;
+    const { title, price, description} = product;
     
 
     return (
         <div className="shadow mx-auto shadow rounded border p-4">
-        <Link to={`/products/${_id}`} ><h4>Title: {title}</h4></Link>
+        <h4>Title: {title}</h4>
         
         <p>Price: {price}</p>
         <p>Description: {description}</p>

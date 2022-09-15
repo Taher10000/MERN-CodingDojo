@@ -20,8 +20,6 @@ export const EditProduct = (props) => {
             setDescription(description);
             setPrice(price);
 
-            console.log(data);
-            setProduct(data);
         })
         .catch((error) => {
             console.log(error);

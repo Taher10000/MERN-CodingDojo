@@ -18,9 +18,12 @@ export const NewProduct = (props) => {
         createProduct(newProduct)
             .then((data) =>{
                 console.log('new products data:', data);
-                navigate('/products')
+                navigate('/')
             })
-            .catch(err=>console.log(err))
+            .catch((error)=>{ 
+                console.log(error)
+                setErrors(error?.response?.data?.errors);
+            }) 
     }
 
     return <div className="w-50 p-4 rounded mx-auto shadow">
@@ -28,14 +31,23 @@ export const NewProduct = (props) => {
             <div className="form-group">
                 <label className="h-7">Title</label><br />
                 <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" />
+                {
+                    errors?.title && <span style={{color:'red'}}>{errors?.title?.message}</span>
+                }
             </div>
             <div className="form-group">
                 <label>Price</label><br />
                 <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} className="form-control"/>
+                {
+                    errors?.price && <span style={{color:'red'}}>{errors?.price?.message}</span>
+                }
             </div>
             <div className="form-group">
                 <label>Description</label><br />
                 <input type="text" onChange={(e) => setDescription(e.target.value)} value={description} className="form-control"/>
+                {
+                    errors?.description && <span style={{color:'red'}}>{errors?.description?.message}</span>
+                }
             </div>
             <button className='btn btn-sm btn-outline-danger'>Create</button>
 
