@@ -31,13 +31,13 @@ export const AllProducts = (props) => {
         {products.map((product) =>{
             const {_id, title, price, description} = product;
             return <div key={_id} className="shadow mb-4 rounded border p-4">
-                <Link to={`/api/products/${_id}`} ><h4>Title: {title}</h4></Link>
+                <Link to={`products/${_id}`} ><h4>Title: {title}</h4></Link>
                 
                 <p>Price: {price}</p>
                 <p>Description: {description}</p>
                 <div>
                     <button className='btn btn-sm btn-outline-danger' onClick={(e)=>HandleDeleteCLick(_id)}>Delete</button>
-                    <Link to={`/api/products/${_id}/edit`} className='btn btn-sm btn-outline-info' >
+                    <Link to={`/products/${_id}/edit`} className='btn btn-sm btn-outline-info' >
                     Edit
                     </Link>
                 </div>

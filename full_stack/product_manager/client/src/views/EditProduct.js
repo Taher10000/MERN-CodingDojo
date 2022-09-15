@@ -52,15 +52,15 @@ export const EditProduct = (props) => {
     <form onSubmit={(e) => HandleUpdateProductSubmit(e)}>
         <div className="form-group">
             <label className="h-7">Title</label><br />
-            <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" value={title} />
+            <input type="text" onChange={(e) => setTitle(e.target.value)} value={title} className="form-control" />
         </div>
         <div className="form-group">
             <label>Price</label><br />
-            <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} className="form-control" value = {price} />
+            <input type="number" onChange={(e) => setPrice(e.target.value)} value={price} className="form-control" />
         </div>
         <div className="form-group">
             <label>Description</label><br />
-            <input type="text" onChange={(e) => setDescription(e.target.value)} value={description} className="form-control" value={description} />
+            <input type="text" onChange={(e) => setDescription(e.target.value)} value={description} className="form-control"  />
         </div>
 
         <button className='btn btn-sm btn-outline-danger'>Edit</button>

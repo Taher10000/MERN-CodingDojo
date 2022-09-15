@@ -17,13 +17,13 @@ function App() {
 
   <div className="navbar-nav justify-content-between">
     <Link
-    to ='/api/products'
+    to ='/products'
     className='btn btn-sm btn-outline-primary mx-1' 
     >
       All Products
     </Link>
     <Link
-    to ='/api/products/new'
+    to ='/products/new'
     className='btn btn-sm btn-outline-info mx-1' 
     >
       New Product
@@ -34,11 +34,11 @@ function App() {
 
     }
     <Routes>
-      <Route path='/' element = {<Navigate to = '/api/products' replace />} />
-      <Route path='/api/products' element = {< AllProducts />} />
-      <Route path='/api/products/:id/edit' element = {< EditProduct/>} />
-      <Route path='/api/products/:id' element = {<OneProduct />} />
-      <Route path='/api/products/new' element = {<NewProduct />} />
+      <Route path='/' element = {<Navigate to = '/products' replace />} />
+      <Route path='products' element = {< AllProducts />} />
+      <Route path='/products/:id/edit' element = {< EditProduct/>} />
+      <Route path='/products/:id' element = {<OneProduct />} />
+      <Route path='/products/new' element = {<NewProduct />} />
       <Route path='*' element = {<NotFound />} />
     </Routes>
 
