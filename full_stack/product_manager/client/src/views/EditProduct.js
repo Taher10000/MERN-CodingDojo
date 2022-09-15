@@ -39,7 +39,7 @@ export const EditProduct = (props) => {
             .then((updatedProduct) =>{
             console.log("updated product:",updatedProduct);
             navigate(`/products/${id}`);
-            });
+            })
             .catch((error) =>{ 
                 console.log(error);
             });
