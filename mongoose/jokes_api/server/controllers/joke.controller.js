@@ -24,7 +24,7 @@ const handleGetAllJokes = async (req,res) =>{
         const jokes = await getAllJokes();
         return res.json(jokes);
     }
-    catch(error){
+    catch(error){ 
         return res.status(400).json(error);
     }
 
@@ -34,6 +34,7 @@ const handleGetRandomJoke = async (req,res) =>{
         const jokes = await getRandomJoke();
         return res.json(jokes[0]);
     }
+
     catch(error){
         return res.status(400).json(error);
     }
