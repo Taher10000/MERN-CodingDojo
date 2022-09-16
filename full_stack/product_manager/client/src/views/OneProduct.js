@@ -14,7 +14,6 @@ export const OneProduct = (props) => {
         })
         .catch((error) => {
             console.log(error);
-            navigate('/notARoute')
         })
     },[id])
     if(product === null){

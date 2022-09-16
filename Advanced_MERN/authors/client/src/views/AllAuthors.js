@@ -35,11 +35,10 @@ export const AllAuthors = (props) => {
                     if(a.name > b.name) {return 1;}
                     return 0;
                 })
-            }
-        {authors.map((author) =>{
+        .map((author) =>{
             const {_id, name} = author;
             return <div key={_id} className="shadow mb-4 rounded border p-4">
-                <Link to={`authors/${_id}`} ><h4>Name: {name}</h4></Link>
+                <Link to={`/authors/${_id}`} ><h4>Name: {name}</h4></Link>
                 
                 <div>
                     <button className='btn btn-sm btn-outline-danger' onClick={(e)=>HandleDeleteCLick(_id)}>Delete</button>

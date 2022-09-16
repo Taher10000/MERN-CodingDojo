@@ -19,7 +19,7 @@ export const EditAuthor = (props) => {
         })
         .catch((error) => {
             console.log(error);
-            // navigate('/NotARoute')
+            navigate('/NotARoute')
         })
     },[id]);
 

@@ -14,7 +14,7 @@ export const OneAuthor = (props) => {
         })
         .catch((error) => {
             console.log(error);
-            // navigate('/notARoute')
+            navigate('/notARoute')
         })
     },[id])
     if(author === null){
