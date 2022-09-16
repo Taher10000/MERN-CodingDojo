@@ -30,12 +30,12 @@ function App() {
     </Link>
   </div>
 </nav>
-    {
+    
 
-    }
+    
     <Routes>
       <Route path='/' element = {<Navigate to = '/products' replace />} />
-      <Route path='products' element = {< AllProducts />} />
+      <Route path='/products' element = {< AllProducts />} />
       <Route path='/products/:id/edit' element = {< EditProduct/>} />
       <Route path='/products/:id' element = {<OneProduct />} />
       <Route path='/products/new' element = {<NewProduct />} />

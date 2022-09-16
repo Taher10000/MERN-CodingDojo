@@ -1,45 +1,43 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { getProductById, deleteProductById } from "../services/internalApiService";
+import { getAuthorById, deleteAuthorById } from "../services/internalApiService";
 import { useEffect, useState } from "react";
 
-export const OneProduct = (props) => {
-    const [product, setProduct] = useState(null);
+export const OneAuthor = (props) => {
+    const [author, setAuthor] = useState(null);
     const navigate = useNavigate();
     const {id} = useParams();
     useEffect(() =>{
-        getProductById(id)
+        getAuthorById(id)
         .then((data) => {
             console.log(data);
-            setProduct(data);
+            setAuthor(data);
         })
         .catch((error) => {
             console.log(error);
-            navigate('/notARoute')
+            // navigate('/notARoute')
         })
     },[id])
-    if(product === null){
+    if(author === null){
         return null;
     }
     const HandleDeleteCLick = () => {
-        deleteProductById(id)
-        .then((deletedProduct) =>{
-            navigate('/products')
+        deleteAuthorById(id)
+        .then((deletedAuthor) =>{
+            navigate('/authors')
         })
         .catch((error) =>{console.log(error)});
     }
 
-    const { title, price, description} = product;
+    const { name} = author;
     
 
     return (
         <div className="shadow mx-auto shadow rounded border p-4">
-        <h4>Title: {title}</h4>
-        
-        <p>Price: {price}</p>
-        <p>Description: {description}</p>
+        <h4>Name: {name}</h4>
+
         <button className='btn btn-sm btn-outline-danger' onClick={(e)=>HandleDeleteCLick()}>Delete</button>
     </div>
 );
 };
 
-export default OneProduct;
+export default OneAuthor;
